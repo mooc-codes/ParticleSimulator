@@ -1,0 +1,4 @@
+/home/mobile/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/mobile/CLionProjects/ParticleSimulator
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/mobile/CLionProjects/ParticleSimulator/cmake-build-debug

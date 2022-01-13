@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/simulator.dir/main.cpp.o CMakeFiles/simulator.dir/Particle.cpp.o CMakeFiles/simulator.dir/Box.cpp.o CMakeFiles/simulator.dir/Renderer.cpp.o -o simulator  -lSDL2 
