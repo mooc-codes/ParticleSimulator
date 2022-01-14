@@ -4,9 +4,9 @@
 
 #include "Box.h"
 
-void Box::addParticle(CircleParticle particle)
+void Box::addParticle(vec2d center, int radius, vec2d velocity)
 {
-    particles_.push_back(std::make_unique<CircleParticle>(particle.Center(), particle.Radius(), particle.Velocity()));
+    particles_.emplace_back(std::make_unique<CircleParticle>(center, radius, velocity));
 }
 
 Box::Box(vec2d p1, vec2d p2)

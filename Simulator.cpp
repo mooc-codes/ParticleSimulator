@@ -9,8 +9,9 @@ Simulator::Simulator(float stepsize, std::vector<vec2d> boxCoords, int numPartic
     dynamics_ = ParticleDynamics();
     renderer_ = Renderer();
     box_ = std::make_shared<Box>(boxCoords[0], boxCoords[1]);
-    CircleParticle p({100,100}, 5, {100, 0});
-    box_->addParticle(p);
+
+    box_->addParticle({95,100}, 5, {0, 100});
+    box_->addParticle({105,100}, 5, {100, 0});
     // Add numParticle particles
 }
 

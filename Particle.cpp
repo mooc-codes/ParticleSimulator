@@ -9,11 +9,12 @@ int BaseParticle::idCnt_ = 0;
 
 CircleParticle::CircleParticle(vec2d center, float radius, vec2d velocity)
 {
+    id_ = BaseParticle::idCnt_;
     this->position_ = center;
     this->radius_ = radius;
     position_ = center;
     velocity_ = velocity;
-    std::cout<<this->velocity_<< " vel "<<std::endl;
+    std::cout<<this->id_<<std::endl;
 
 }
 
@@ -29,6 +30,9 @@ float CircleParticle::leftEnd() {return position_[0] - radius_;}
 float CircleParticle::rightEnd() {return position_[0] + radius_;}
 float CircleParticle::topEnd() {return position_[1] - radius_; }
 float CircleParticle::bottomEnd() {return position_[1] + radius_;}
+
+
+int CircleParticle::ID() {return id_;}
 
 void CircleParticle::simulate(int stepsize)
 {

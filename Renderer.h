@@ -13,7 +13,7 @@
 
 class Renderer {
 
-    int w = 400;
+    int w = 410;
     cv::Mat image_ ;
 
 public:

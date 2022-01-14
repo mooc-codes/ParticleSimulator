@@ -12,16 +12,17 @@ typedef Eigen::Vector2d vec2d;
 class BaseParticle {
 
 private:
-    static int idCnt_;
+
 
 protected:
+    static int idCnt_;
     vec2d velocity_; // [vx, vy]
     vec2d position_; // [x,y]
     int id_;
 
 public :
 
-    BaseParticle() = default;
+    BaseParticle() { idCnt_++; };
     ~BaseParticle()= default;
 
     // TODO : return const reference to eliminate copy;sure that all virtual methods that are not pure are define
@@ -48,6 +49,8 @@ private:
 public:
     CircleParticle(vec2d center, float radius, vec2d velocity);
     ~CircleParticle() = default;
+
+    int ID();
 
     void Radius(int r);
     int Radius() ;
