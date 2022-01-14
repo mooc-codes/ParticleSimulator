@@ -21,9 +21,10 @@ protected:
 
 public :
 
-    BaseParticle() {idCnt_++;};
+    BaseParticle() = default;
+    ~BaseParticle()= default;
 
-    // TODO : return const reference to eliminate copy;
+    // TODO : return const reference to eliminate copy;sure that all virtual methods that are not pure are define
     vec2d Velocity(){return this->velocity_;}
     vec2d Position(){return this->position_;}
 
@@ -32,7 +33,7 @@ public :
 
 
     // Physics
-//    virtual  void simulate();
+    virtual  void simulate(int timestep) = 0;
 
 };
 
@@ -42,11 +43,11 @@ class CircleParticle : public  BaseParticle
 private:
 
     int radius_;
-    vec2d center_;
 
 
 public:
     CircleParticle(vec2d center, float radius, vec2d velocity);
+    ~CircleParticle() = default;
 
     void Radius(int r);
     int Radius() ;
@@ -60,7 +61,7 @@ public:
     float bottomEnd();
 
     // Simulated movement based on constant acceleration motion model.
-//    void simulate() override;
+    void simulate(int stepsize) override;
 
 };
 

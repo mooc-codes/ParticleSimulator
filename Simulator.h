@@ -28,7 +28,7 @@ public:
     Simulator(float stepsize, std::vector<vec2d> boxCoords, int numParticles);
 
     // Computes a single step of the simulation
-    void step();
+    void run();
 
     // Renders the particles on to the GUI
     void render(std::shared_ptr<Box> box);

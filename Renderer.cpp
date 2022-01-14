@@ -15,7 +15,7 @@ void Renderer::render(std::shared_ptr<Box> box, int stepsize)
         for(auto &p : box->particles_)
         {
 
-            cv::circle(this->image_, cv::Point2d(p.Center()[0], p.Center()[1]), p.Radius(), Color, -1);
+            cv::circle(this->image_, cv::Point2d(p->Center()[0], p->Center()[1]), p->Radius(), Color, -1);
         }
         imshow("NONE", this->image_);
         cv::waitKey(stepsize);

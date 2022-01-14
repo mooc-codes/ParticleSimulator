@@ -22,11 +22,11 @@ private:
     vec2d p1, p2;
 
 
-    float leftEnd, rightEnd, topEnd, bottomEnd;
+
 
 public:
-
-    std::vector<CircleParticle> particles_;
+    float leftEnd, rightEnd, topEnd, bottomEnd;
+    std::vector<std::unique_ptr<CircleParticle>> particles_;
     Box(vec2d p1, vec2d p2);
 
 

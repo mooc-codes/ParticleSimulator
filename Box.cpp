@@ -6,7 +6,7 @@
 
 void Box::addParticle(CircleParticle particle)
 {
-    particles_.push_back(particle);
+    particles_.push_back(std::make_unique<CircleParticle>(particle.Center(), particle.Radius(), particle.Velocity()));
 }
 
 Box::Box(vec2d p1, vec2d p2)

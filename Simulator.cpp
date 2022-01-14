@@ -15,7 +15,7 @@ Simulator::Simulator(float stepsize, std::vector<vec2d> boxCoords, int numPartic
 }
 
 
-void Simulator::step()
+void Simulator::run()
 {
     long timeSinceLastUpdate;
     std::chrono::time_point<std::chrono::system_clock> lastUpdate;
@@ -24,10 +24,10 @@ void Simulator::step()
     while(true) {
             // 40 ms delay is given by
             this->render(this->box_);
-            auto c1 = box_->particles_[0].Center()[0];
-            auto c2 = box_->particles_[0].Center()[1];
-            box_->particles_[0].Center({c1+2, c2});
-
+            for(auto &p : box_->particles_)
+            {
+                p->simulate(stepSize_);
+            }
     }
 }
 
