@@ -23,14 +23,12 @@ private:
 
 public:
 
-    Simulator(float stepsize):timeSteps_(0), stepSize_(stepsize)
-    {
-        dynamics_ = ParticleDynamics();
-        renderer_ = Renderer();
-    }
+    std::shared_ptr<Box> box_;
+
+    Simulator(float stepsize, std::vector<vec2d> boxCoords, int numParticles);
 
     // Computes a single step of the simulation
-    void step(std::shared_ptr<Box> box);
+    void step();
 
     // Renders the particles on to the GUI
     void render(std::shared_ptr<Box> box);
