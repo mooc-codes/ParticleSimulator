@@ -9,7 +9,7 @@ Simulator::Simulator(float stepsize, std::vector<vec2d> boxCoords, int numPartic
     dynamics_ = ParticleDynamics();
     renderer_ = Renderer();
     box_ = std::make_shared<Box>(boxCoords[0], boxCoords[1]);
-    CircleParticle p({100,100}, 5, {10, 0});
+    CircleParticle p({100,100}, 5, {100, 0});
     box_->addParticle(p);
     // Add numParticle particles
 }
@@ -23,11 +23,14 @@ void Simulator::run()
     lastUpdate = std::chrono::system_clock::now();
     while(true) {
             // 40 ms delay is given by
-            this->render(this->box_);
+
             for(auto &p : box_->particles_)
             {
                 p->simulate(stepSize_);
+
             }
+        dynamics_.checkBoxCollision(box_);
+        this->render(this->box_);
     }
 }
 

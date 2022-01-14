@@ -14,5 +14,5 @@ add_definitions(${OpenCV_DEFINITIONS})
 
 #add_library(ParticleSimulator SHARED Particle.cpp)
 
-add_executable(simulator main.cpp Particle.cpp Box.cpp Renderer.cpp Simulator.cpp)
+add_executable(simulator main.cpp Particle.cpp Box.cpp ParticleDynamics.cpp Renderer.cpp Simulator.cpp )
 target_link_libraries (simulator Eigen3::Eigen ${OpenCV_LIBRARIES} )

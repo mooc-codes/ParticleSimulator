@@ -11,7 +11,7 @@
 int main()
 {
 
-    vec2d c1{0,20}, c2{20,0};
+    vec2d c1{0,400}, c2{400,0};
 
     Simulator s(16, {c1,c2},1);
 
