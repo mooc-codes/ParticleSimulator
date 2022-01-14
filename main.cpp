@@ -20,14 +20,7 @@ int main()
 
     CircleParticle p = CircleParticle({10,10},2,{2,0});
 
-    box.addParticle(p);
-    SDL_Point p1;
-    SDL_
-    p1.x = p.Center()[0];
-    p1.y = p.Center()[1];
+    Renderer renderer = Renderer();
 
-    Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-
-    while(true)
-    {renderer.Render(p1);}
+    renderer.render();
 }
