@@ -21,12 +21,12 @@ private:
     // Representing the box using 2 point rectangle form to eliminate computations for edges;
     vec2d p1, p2;
 
-    std::vector<CircleParticle> particles_;
+
     float leftEnd, rightEnd, topEnd, bottomEnd;
 
 public:
 
-
+    std::vector<CircleParticle> particles_;
     Box(vec2d p1, vec2d p2);
 
 

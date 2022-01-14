@@ -6,21 +6,21 @@
 #include "Particle.h"
 #include "Simulator.h"
 #include "Renderer.h"
+#include <memory>
 
 int main()
 {
-    //assume 1px = 1mm;
-    constexpr std::size_t kScreenWidth{600};
-    constexpr std::size_t kScreenHeight{600};
-    constexpr std::size_t kGridWidth{600};
-    constexpr std::size_t kGridHeight{600};
 
+//    Box box = Box({0, 20}, {20,0});
+    vec2d c1{0,20}, c2{20,0};
 
-    Box box = Box({0, 20}, {20,0});
+    auto box = std::make_shared<Box>(c1, c2);
 
-    CircleParticle p = CircleParticle({10,10},2,{2,0});
+    CircleParticle p = CircleParticle({100,100},5,{2,0});
 
-    Renderer renderer = Renderer();
+    box->addParticle(p);
 
-    renderer.render();
+    Simulator s(40);
+
+    s.step(box);
 }

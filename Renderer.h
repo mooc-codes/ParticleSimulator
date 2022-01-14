@@ -9,13 +9,15 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 
+#include "Box.h"
+
 class Renderer {
 
     int w = 400;
     cv::Mat image_ ;
 
 public:
-    void render();
+    void render(std::shared_ptr<Box> box, int stepsize);
 
 };
 

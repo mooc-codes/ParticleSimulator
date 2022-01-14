@@ -6,16 +6,18 @@
 
 
 
-void Renderer::render()
+void Renderer::render(std::shared_ptr<Box> box, int stepsize)
 {
-    int i = 100;
-    while (true) {
+
         this->image_ = cv::Mat::zeros(w, w, CV_8UC3);
-        cv::Scalar vehicleColor = cv::Scalar(255, 255, 255);
-        cv::circle(this->image_, cv::Point2d(i, 100), 5, vehicleColor, -1);
-        cv::circle(this->image_, cv::Point2d(100, i), 5, vehicleColor, -1);
-        i++;
+        cv::Scalar Color = cv::Scalar(255, 255, 255);
+
+        for(auto &p : box->particles_)
+        {
+
+            cv::circle(this->image_, cv::Point2d(p.Center()[0], p.Center()[1]), p.Radius(), Color, -1);
+        }
         imshow("NONE", this->image_);
-        cv::waitKey(10);
-    }
+        cv::waitKey(stepsize);
+
 }
