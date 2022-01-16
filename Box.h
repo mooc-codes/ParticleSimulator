@@ -27,7 +27,7 @@ private:
 public:
     float leftEnd, rightEnd, topEnd, bottomEnd;
     std::vector<std::unique_ptr<CircleParticle>> particles_;
-    Box(vec2d p1, vec2d p2);
+    Box(vec2d p);
 
 
     void addParticle(vec2d Center, int radius, vec2d velocity, int mass, std::vector<int> color);

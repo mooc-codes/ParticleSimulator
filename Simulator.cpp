@@ -5,12 +5,12 @@
 #include "Simulator.h"
 
 
-Simulator::Simulator(float stepsize, std::vector<vec2d> boxCoords, int numParticles):timeSteps_(0), stepSize_(stepsize)
+Simulator::Simulator(float stepsize, vec2d boxCoords, int numParticles):timeSteps_(0), stepSize_(stepsize)
 {
 
     dynamics_ = ParticleDynamics();
     renderer_ = Renderer();
-    box_ = std::make_shared<Box>(boxCoords[0], boxCoords[1]);
+    box_ = std::make_shared<Box>(boxCoords);
 
 // Test particles
 //    box_->addParticle({50,140}, 5, {100, 0},1);

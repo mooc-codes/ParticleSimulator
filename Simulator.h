@@ -27,7 +27,7 @@ public:
 
     std::shared_ptr<Box> box_;
 
-    Simulator(float stepsize, std::vector<vec2d> boxCoords, int numParticles);
+    Simulator(float stepsize, vec2d boxCoords, int numParticles);
 
     // Computes a single step of the simulation
     void run();

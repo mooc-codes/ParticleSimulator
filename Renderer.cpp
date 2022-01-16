@@ -3,13 +3,15 @@
 //
 
 #include "Renderer.h"
-
+#include <math.h>
 
 
 void Renderer::render(std::shared_ptr<Box> box, int stepsize)
 {
 
-        this->image_ = cv::Mat::zeros(w, w, CV_8UC3);
+        auto w = abs(box->leftEnd - box->rightEnd);
+        auto h = abs(box->bottomEnd - box->topEnd);
+        this->image_ = cv::Mat::zeros(w+5, h+5, CV_8UC3);
         cv::Scalar Color ;
         cv::rectangle(this->image_, cv::Point(box->leftEnd, box->topEnd), cv::Point(box->rightEnd, box->bottomEnd),
                       cv::Scalar(255, 255, 255),

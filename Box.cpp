@@ -9,11 +9,11 @@ void Box::addParticle(vec2d center, int radius, vec2d velocity, int mass, std::v
     particles_.emplace_back(std::make_unique<CircleParticle>(center, radius, velocity, mass, color));
 }
 
-Box::Box(vec2d p1, vec2d p2)
+Box::Box(vec2d p)
 {
-    leftEnd = p1[0];
-    rightEnd = p2[0];
-    topEnd = p1[1];
-    bottomEnd = p2[1];
+    leftEnd = 0;
+    rightEnd = p[0];
+    topEnd = p[1];
+    bottomEnd = 0;
 }
 

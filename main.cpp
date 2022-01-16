@@ -1,17 +1,27 @@
-//
-// Created by ibrahim on 13/01/22.
-//
 
-#include "Box.h"
+
 #include "Simulator.h"
+#include <iostream>
 
+// Entry point
 int main()
 {
 
-    // create box rectangle
-    vec2d c1{5,400}, c2{400,5};
+    // Define box size
+    vec2d box_size{500,500};
 
-    Simulator s(16, {c1,c2},15);
+    int numParticles = 0;
 
+    // Get number of particles input from user
+    while (true){
+        std::cout<<"Enter the number of particles (min : 1, max 15)  : ";
+        std::cin >> numParticles;
+        if(numParticles !=0 && numParticles < 15) break;
+    }
+
+    // Create the simulator instance
+    Simulator s(16, box_size , numParticles);
+
+    // Run the simulation
     s.run();
 }
