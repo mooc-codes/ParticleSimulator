@@ -8,12 +8,13 @@
 
 void ParticleDynamics::checkBoxCollision(std::shared_ptr<Box> box)
 {
+    float threshold = 0.95;
     for(auto &p : box->particles_)
     {
-        if (p->rightEnd() >= box->rightEnd || p->leftEnd() <= box->leftEnd)
+        if (p->rightEnd() >= box->rightEnd * threshold|| p->leftEnd() <= box->leftEnd * threshold)
             p->Velocity({p->Velocity()[0] * -1, p->Velocity()[1]});
 
-        else if (p->topEnd() >= box->topEnd || p->bottomEnd() <= box->bottomEnd)
+        else if (p->topEnd() >= box->topEnd *threshold|| p->bottomEnd() <= box->bottomEnd * threshold)
             p->Velocity({p->Velocity()[0], p->Velocity()[1] * -1});
     }
 }

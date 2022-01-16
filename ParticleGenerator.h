@@ -17,6 +17,7 @@ private:
     std::uniform_int_distribution<> velocity_distribution;
     std::uniform_int_distribution<> radius_distribution;
     std::uniform_int_distribution<> mass_distribution;
+    std::uniform_int_distribution<> color_distribution;
 
 public:
 

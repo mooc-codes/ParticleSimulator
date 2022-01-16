@@ -3,18 +3,15 @@
 //
 
 #include "Box.h"
-#include "Particle.h"
 #include "Simulator.h"
-#include "Renderer.h"
-#include <memory>
 
 int main()
 {
 
     // create box rectangle
-    vec2d c1{0,400}, c2{400,0};
+    vec2d c1{5,400}, c2{400,5};
 
-    Simulator s(16, {c1,c2},10);
+    Simulator s(16, {c1,c2},15);
 
     s.run();
 }

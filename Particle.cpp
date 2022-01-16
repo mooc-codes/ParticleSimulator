@@ -7,7 +7,7 @@
 
 int BaseParticle::idCnt_ = 0;
 
-CircleParticle::CircleParticle(vec2d center, float radius, vec2d velocity, int mass)
+CircleParticle::CircleParticle(vec2d center, float radius, vec2d velocity, int mass, std::vector<int> color)
 {
     id_ = BaseParticle::idCnt_;
     mass_ = mass;
@@ -16,6 +16,7 @@ CircleParticle::CircleParticle(vec2d center, float radius, vec2d velocity, int m
     position_ = center;
     velocity_ = velocity;
     std::cout<<this->id_<<std::endl;
+    color_ = color;
 
 }
 

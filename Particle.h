@@ -6,6 +6,7 @@
 #define PARTICLE_H
 
 #include <Eigen/Dense>
+#include <vector>
 
 typedef Eigen::Vector2d vec2d;
 
@@ -16,12 +17,16 @@ private:
 
 protected:
     static int idCnt_;
+
     vec2d velocity_; // [vx, vy]
     vec2d position_; // [x,y]
     int mass_; // keeping as int , could very well be float
     int id_;
 
 public :
+
+    //making color public
+    std::vector<int> color_;
 
     BaseParticle() { idCnt_++; };
     ~BaseParticle()= default;
@@ -50,7 +55,7 @@ private:
 
 
 public:
-    CircleParticle(vec2d center, float radius, vec2d velocity, int mass);
+    CircleParticle(vec2d center, float radius, vec2d velocity, int mass, std::vector<int> color);
     ~CircleParticle() = default;
 
     int ID();
