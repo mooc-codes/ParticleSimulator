@@ -30,7 +30,7 @@ public:
     Box(vec2d p1, vec2d p2);
 
 
-    void addParticle(vec2d Center, int radius, vec2d velocity);
+    void addParticle(vec2d Center, int radius, vec2d velocity, int mass);
 
 };
 

@@ -7,9 +7,10 @@
 
 int BaseParticle::idCnt_ = 0;
 
-CircleParticle::CircleParticle(vec2d center, float radius, vec2d velocity)
+CircleParticle::CircleParticle(vec2d center, float radius, vec2d velocity, int mass)
 {
     id_ = BaseParticle::idCnt_;
+    mass_ = mass;
     this->position_ = center;
     this->radius_ = radius;
     position_ = center;

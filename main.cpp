@@ -11,9 +11,10 @@
 int main()
 {
 
+    // create box rectangle
     vec2d c1{0,400}, c2{400,0};
 
-    Simulator s(16, {c1,c2},1);
+    Simulator s(16, {c1,c2},10);
 
     s.run();
 }

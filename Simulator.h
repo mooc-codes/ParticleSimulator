@@ -12,6 +12,7 @@
 #include "Particle.h"
 #include "ParticleDynamics.h"
 #include "Renderer.h"
+#include "ParticleGenerator.h"
 
 class Simulator {
 
@@ -20,6 +21,7 @@ private:
     float stepSize_; // (milliseconds) fraction of time covered in a single step
     ParticleDynamics dynamics_;
     Renderer renderer_;
+    ParticleGenerator generator_;
 
 public:
 

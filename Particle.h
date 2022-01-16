@@ -18,6 +18,7 @@ protected:
     static int idCnt_;
     vec2d velocity_; // [vx, vy]
     vec2d position_; // [x,y]
+    int mass_; // keeping as int , could very well be float
     int id_;
 
 public :
@@ -32,6 +33,8 @@ public :
     void Velocity(vec2d v) {velocity_ = v;}
     void Position(vec2d p) {position_ = p;}
 
+    void Mass(int mass){mass_ = mass;}
+    int Mass(){return mass_;}
 
     // Physics
     virtual  void simulate(int timestep) = 0;
@@ -47,7 +50,7 @@ private:
 
 
 public:
-    CircleParticle(vec2d center, float radius, vec2d velocity);
+    CircleParticle(vec2d center, float radius, vec2d velocity, int mass);
     ~CircleParticle() = default;
 
     int ID();
