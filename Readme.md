@@ -14,7 +14,7 @@ Modeling of particle collisions in a 2D space under the  following assumptions:
 ### Motivation
 
 I have  been fascinated by physics simulators and game engines for sometime and wanted to try making a small prototype of my own
-and this project looked like the perfect opporturnity to try it out.
+and this project looked like the perfect opportunity to try it out.
 
 
 ##Classes
@@ -59,16 +59,36 @@ make
 
 ./simulator
 ```
+
+### Expected input
+```
+Enter the number of particles (min : 1, max 20)  : 15
+```
 ### Expected output 
+
+The visualisation of the particles colliding 
 
 <img src="data/collision2D.gif"/>
 
 
 ## Criterias Completed
 
+**Loops, Functions, I/O**
+- The project demonstrates an understanding of C++ functions and control structures.
+- The project accepts user input and processes the input.
+
 **OOP**
-- Project uses OOP
-- Classes use appropriate access specifiers for class members
-- class constructors utilize member initializer lists
-- classes abstract implementation details
-- 
+- The project uses Object Oriented Programming techniques.
+- Classes use appropriate access specifiers for class members.
+- Class constructors utilize member initialization lists.
+- Classes abstract implementation details from their interfaces.
+- Classes encapsulate behavior.
+- Classes follow an appropriate inheritance hierarchy.
+- Overloaded functions allow the same function to operate on different parameters.
+- Derived class functions override virtual base class functions.
+
+**Memory Management**
+
+- The project makes use of references in function declarations.
+- The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate.
+- The project uses smart pointers instead of raw pointers.

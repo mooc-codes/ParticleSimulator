@@ -13,7 +13,7 @@ int main()
 
     // Get number of particles input from user
     while (true){
-        std::cout<<"Enter the number of particles (min : 1, max 15)  : ";
+        std::cout<<"Enter the number of particles (min : 1, max 20)  : ";
         std::cin >> numParticles;
         if(numParticles > 0 && numParticles <= 20) break;
     }
