@@ -6,7 +6,7 @@ ParticleGenerator::ParticleGenerator() {
     velocity_distribution = std::uniform_int_distribution<>(10, 200);
     radius_distribution = std::uniform_int_distribution<>(2,15);
     mass_distribution = std::uniform_int_distribution<>(1,15);
-    color_distribution = std::uniform_int_distribution<>(0,255);
+    color_distribution = std::uniform_int_distribution<>(10,255);
 
 }
 

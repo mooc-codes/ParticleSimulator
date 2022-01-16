@@ -16,7 +16,7 @@ void Renderer::render(std::shared_ptr<Box> box, int stepsize)
             Color = cv::Scalar(p->color_[0], p->color_[1], p->color_[2]);
             cv::circle(this->image_, cv::Point2d(p->Center()[0], p->Center()[1]), p->Radius(), Color, -1);
         }
-        imshow("NONE", this->image_);
+        imshow("2D Collision", this->image_);
         cv::waitKey(stepsize);
 
 }
