@@ -1,9 +1,5 @@
-//
-// Created by mobile on 14/01/22.
-//
-
-#ifndef PARTICLESIMULATOR_RENDERER_H
-#define PARTICLESIMULATOR_RENDERER_H
+#ifndef RENDERER_H
+#define RENDERER_H
 
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
@@ -13,7 +9,6 @@
 
 class Renderer {
 
-    int w = 405;
     cv::Mat image_ ;
 
 public:
@@ -22,4 +17,4 @@ public:
 };
 
 
-#endif //PARTICLESIMULATOR_RENDERER_H
+#endif //RENDERER_H

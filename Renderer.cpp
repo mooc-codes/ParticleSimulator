@@ -1,14 +1,9 @@
-//
-// Created by mobile on 14/01/22.
-//
-
 #include "Renderer.h"
-#include <math.h>
+#include <cmath>
 
 
 void Renderer::render(std::shared_ptr<Box> box, int stepsize)
 {
-
         auto w = abs(box->leftEnd - box->rightEnd);
         auto h = abs(box->bottomEnd - box->topEnd);
         this->image_ = cv::Mat::zeros(w+5, h+5, CV_8UC3);

@@ -1,7 +1,3 @@
-//
-// Created by ibrahim on 13/01/22.
-//
-
 #include "Particle.h"
 #include <iostream>
 
@@ -15,17 +11,11 @@ CircleParticle::CircleParticle(vec2d center, float radius, vec2d velocity, int m
     this->radius_ = radius;
     position_ = center;
     velocity_ = velocity;
-    std::cout<<this->id_<<std::endl;
+    std::cout<<"Particle Created , ID : "<<this->id_<<std::endl;
     color_ = color;
 
 }
 
-void CircleParticle::Radius(int r) {radius_ = r;}
-// TODO : return const reference to eliminate copy;
-int CircleParticle::Radius() {return  radius_;}
-
-void CircleParticle::Center(vec2d c) {position_ = c;}
-// TODO : return const reference to eliminate copy;
 vec2d CircleParticle::Center() {return position_;}
 
 float CircleParticle::leftEnd() {return position_[0] - radius_;}
@@ -38,7 +28,8 @@ int CircleParticle::ID() {return id_;}
 
 void CircleParticle::simulate(int stepsize)
 {
-    // constant velocity is assumed
-    float dt = (float) stepsize / 1000.0;
+    // constant velocity is assumed, acceleration = 0
+    double dt = (double)stepsize / 1000.0;
+    // update position
     position_ += velocity_ * dt;
 }

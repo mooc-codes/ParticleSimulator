@@ -1,7 +1,3 @@
-//
-// Created by ibrahim on 13/01/22.
-//
-
 #include "Box.h"
 
 void Box::addParticle(vec2d center, int radius, vec2d velocity, int mass, std::vector<int> color)

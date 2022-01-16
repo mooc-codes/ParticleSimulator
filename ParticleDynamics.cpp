@@ -1,12 +1,7 @@
-//
-// Created by mobile on 13/01/22.
-//
-
 #include "ParticleDynamics.h"
 #include <iostream>
-#include <math.h>
 
-void ParticleDynamics::checkBoxCollision(std::shared_ptr<Box> box)
+ void ParticleDynamics::checkBoxCollision(std::shared_ptr<Box> box)
 {
     float threshold = 0.95;
     for(auto &p : box->particles_)
@@ -52,8 +47,11 @@ void ParticleDynamics::checkParticleCollision(std::shared_ptr<Box> box)
                 if (center_dist <= (p->Radius() + q->Radius()) *0.9)
                 {
                     //collision
+                    // Source : https://www.vobarian.com/collisions/2dcollisions2.pdf
                     auto key = std::make_pair(p->ID(),q->ID());
-                    if (isNotResolved(resolved_pairs,key )) {
+
+                    if (isNotResolved(resolved_pairs,key ))
+                    {
                         std::cout << "COLLISION ! " << p->ID() << " --> " << q->ID() << std::endl;
                         vec2d v1 = p->Velocity();
                         vec2d v2 = q->Velocity();
@@ -88,6 +86,5 @@ void ParticleDynamics::checkParticleCollision(std::shared_ptr<Box> box)
                 }
             }
         }
-//        resolved_pairs.clear();
     }
 }

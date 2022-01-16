@@ -1,9 +1,4 @@
-//
-// Created by mobile on 13/01/22.
-//
-
 #include "Simulator.h"
-
 
 Simulator::Simulator(float stepsize, vec2d boxCoords, int numParticles):timeSteps_(0), stepSize_(stepsize)
 {
@@ -11,6 +6,7 @@ Simulator::Simulator(float stepsize, vec2d boxCoords, int numParticles):timeStep
     dynamics_ = ParticleDynamics();
     renderer_ = Renderer();
     box_ = std::make_shared<Box>(boxCoords);
+    timeSteps_ = 0;
 
 // Test particles
 //    box_->addParticle({50,140}, 5, {100, 0},1);
@@ -34,8 +30,7 @@ void Simulator::run()
 
     lastUpdate = std::chrono::system_clock::now();
     while(true) {
-            // 40 ms delay is given by
-
+        // 40 ms delay is given by cv::Waitkey()
 
         dynamics_.checkBoxCollision(box_);
         dynamics_.checkParticleCollision(box_);
@@ -45,7 +40,9 @@ void Simulator::run()
 
         }
         this->render(this->box_);
+        timeSteps_ ++;
     }
+
 }
 
 void Simulator::render(std::shared_ptr<Box> box)

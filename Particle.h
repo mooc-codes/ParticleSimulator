@@ -1,7 +1,3 @@
-//
-// Created by ibrahim on 13/01/22.
-//
-
 #ifndef PARTICLE_H
 #define PARTICLE_H
 
@@ -20,18 +16,17 @@ protected:
 
     vec2d velocity_; // [vx, vy]
     vec2d position_; // [x,y]
-    int mass_; // keeping as int , could very well be float
+    int mass_; // keeping as int for simplicity, could very well be float/double
     int id_;
 
 public :
 
-    //making color public
+    //Making color public since there is only read acess after initialzation
     std::vector<int> color_;
 
     BaseParticle() { idCnt_++; };
     ~BaseParticle()= default;
 
-    // TODO : return const reference to eliminate copy;sure that all virtual methods that are not pure are define
     vec2d Velocity(){return this->velocity_;}
     vec2d Position(){return this->position_;}
 
@@ -60,10 +55,8 @@ public:
 
     int ID();
 
-    void Radius(int r);
-    int Radius() ;
+    int Radius() {return radius_;}
 
-    void Center(vec2d c);
     vec2d Center();
 
     float leftEnd();
@@ -71,7 +64,7 @@ public:
     float topEnd();
     float bottomEnd();
 
-    // Simulated movement based on constant acceleration motion model.
+    // Simulated movement based on zero acceleration motion model.
     void simulate(int stepsize) override;
 
 };

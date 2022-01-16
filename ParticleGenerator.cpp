@@ -1,7 +1,3 @@
-//
-// Created by mobile on 16/01/22.
-//
-
 #include "ParticleGenerator.h"
 
 ParticleGenerator::ParticleGenerator() {

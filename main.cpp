@@ -1,5 +1,4 @@
 
-
 #include "Simulator.h"
 #include <iostream>
 
@@ -16,10 +15,11 @@ int main()
     while (true){
         std::cout<<"Enter the number of particles (min : 1, max 15)  : ";
         std::cin >> numParticles;
-        if(numParticles !=0 && numParticles < 15) break;
+        if(numParticles > 0 && numParticles <= 20) break;
     }
 
     // Create the simulator instance
+    // stepsize 16 ~ 60 FPS or 60 Hz
     Simulator s(16, box_size , numParticles);
 
     // Run the simulation

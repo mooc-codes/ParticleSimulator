@@ -2,17 +2,18 @@
 // Created by mobile on 13/01/22.
 //
 
-#ifndef PARTICLESIMULATOR_SIMULATOR_H
-#define PARTICLESIMULATOR_SIMULATOR_H
+#ifndef SIMULATOR_H
+#define SIMULATOR_H
 
 #include <vector>
 #include <memory>
 #include <chrono>
 #include "Box.h"
 #include "Particle.h"
+#include "ParticleGenerator.h"
 #include "ParticleDynamics.h"
 #include "Renderer.h"
-#include "ParticleGenerator.h"
+
 
 class Simulator {
 
@@ -37,4 +38,4 @@ public:
 };
 
 
-#endif //PARTICLESIMULATOR_SIMULATOR_H
+#endif //SIMULATOR_H
