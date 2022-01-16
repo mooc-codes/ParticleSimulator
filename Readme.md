@@ -61,7 +61,7 @@ make
 ```
 ### Expected output 
 
-<img src="data/collisions.gif"/>
+<img src="data/collision2D.gif"/>
 
 
 ## Criterias Completed
