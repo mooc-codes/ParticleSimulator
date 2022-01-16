@@ -38,7 +38,7 @@ and this project looked like the perfect opportunity to try it out.
    - Generates the visual output of the collision using OpenCV .
    
 7. **Simulator**
-   - Handles the creation and manages the simulation loop
+   - Handles the creation of simulation entities and manages the simulation loop
    
 
 ### Dependencies
@@ -62,7 +62,7 @@ make
 
 ### Expected input
 ```
-Enter the number of particles (min : 1, max 20)  : 15
+Enter the number of particles (min : 1, max 20)  : <Enter number here>
 ```
 ### Expected output 
 
