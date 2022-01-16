@@ -92,3 +92,17 @@ The visualisation of the particles colliding
 - The project makes use of references in function declarations.
 - The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate.
 - The project uses smart pointers instead of raw pointers.
+
+
+### Excution in project workspace
+
+I developed the project locally on my ubuntu 20.04 machine , and it compiles without any errors or warnings. But the project workspace VM seems to have some issues finding Eigen properly using just find_package().
+I have made the necessary changes for it to work in project workpace , and it compiles are runs. ( there seems to be warnings, I am not sure why it happens on the VM)
+
+Attaching an image of working in project space
+
+<img src="data/collision_workspace.png"/>
+
+Compilation on my machine without warings
+
+<img src="data/no_warn.png"/>
